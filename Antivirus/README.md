@@ -1,0 +1,2 @@
+# Antivirus
+This directory serves to ellaborate upon some of the fundamentals when it comes to how Personal Security Products (PSPs) work to detect, mitigate, and remove threats on a personal machine or network. With this knowledge a malicious actor could evade such mechanisms more efficiently and effectively. 
