@@ -1,2 +1,2 @@
-# Research-Notes
-Notes about interesting things 
+# Research 
+My goal for this repository is for it to serve as a personal outlet for notetaking and research while learning more regarding the offensive approach one can take when exploiting Windows machines. I hope it is helpful to someone else at some point. Please reach out with comments and questions as needed. 
