@@ -4,6 +4,6 @@
 
 ## How it Works
 
-![kerberos.png](/Images/kerberos.png)
+![kerberos.png](./Images/kerberos.png?raw=true "Kerberos Overview")
 
 
