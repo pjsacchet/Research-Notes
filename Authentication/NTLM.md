@@ -5,3 +5,4 @@
 ## How it Works
 
 
+![ntlm.png](./Images/ntlm.png?raw=true "NTLM Overview")
