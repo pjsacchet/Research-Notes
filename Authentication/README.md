@@ -7,3 +7,5 @@ This directory serves as an rudimentary introduction to authentication related m
 - SAM - An overview of the Security Account Manager; a database held on Windows machines that is in charge of keeping copies of user authentication information, such as NTLM hashes, RIDs, SIDs etc.
 - KDC - An overview of the Key Distribution Center; commonly used within domain controllers for key distribution and management. 
 - AD - An overview of Active Directory; a database of types for domain-joined users, commonly kept on the domain controller.  
+
+![logon.png](./Images/logon.gif?raw=true "Logon Overview")
