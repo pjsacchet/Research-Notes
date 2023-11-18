@@ -4,6 +4,6 @@
 
 ## How it Works
 
-![Kerberos Overview] (Images/kerberos.png?raw=true)
+![kerberos.png] (https://github.com/pjsacchet/Research-Notes/blob/main/Authentication/Images/kerberos.png?raw=true)
 
 
