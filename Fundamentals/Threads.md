@@ -1,1 +1,9 @@
 # Threads
+
+### Symmetric Multiprocessing
+Initial Windows design choices make it so Windows runs well on multiprocessor systems. Windows is by definition a symmetric multiprocessing (SMP) OS, i.e., there is no 'master' processor for running kernel code vs. user code. Asymmetric Processing (ASMP) however does split processor cores to have one dedicated to OS system calls (a 'master') while the remaining cores serve to service user threads/code. There are four types of multiprocessor systems that Windows supports:
+
+1. Multicore - Real physical cores. Windows' original SMP code treats cores as discrete processors. 
+2. Simultaneous Mutli-threaded (SMT) - Provides two logical processors for each physical core. Each logical processor has its own CPU state, but the execution engine and onboard cache are shared. This implies that one logical CPU can make progress while another is stalled (due to a cache miss or branch mis-prediction). 
+3. Heterogeneous - Supported by ARM versions of Windows. In this design not all processor cores are identical in their capabilities, yet unlike pure heteregeneous multi-processing, they are still able to execute the same instructions. 
+4. Non-uniform Memory Access (NUMA) - Processors are grouped into similar units called nodes. Each node has its own processors and memory and is connected to the larger system through a cache-coherent interconnect bus. Each node still has access to shared memory, however, accessing node-local memory serves to be faster and preffered. The system attempts to schedule threads on processors that are in the same node as the memory being used. 
