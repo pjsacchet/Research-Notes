@@ -25,3 +25,8 @@ When an application calls a function in   subsystem DLL one of the following wil
 - The function requires one or more calls to the Windows executive. Examples include the Windows *ReadFile* and *WriteFile* functions, which underneath call undocumented *NtReadFile* (* \*cough\* http://undocumented.ntinternals.net/index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FNtReadFileScatter.html*) and *NtWriteFile* (*\*cough\* http://undocumented.ntinternals.net/index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FNtWriteFile.html*) functions.
 - The function requires some work to be done in the environment subsystem process. In this case, a client/server request is made to the environment subsystem via an ALPC message sent to the subsystem to perform some operation. The subsystem DLL then waits for a reply before returning to the caller.
 
+Subsystems are started by the session manager (*smss.exe*) process.Subsystem startup information is stored udner the registry key *HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SessionManager\SubSystems*.
+
+#### Windows Subsystem
+
+#### Windows 10 & Win32k.sys
