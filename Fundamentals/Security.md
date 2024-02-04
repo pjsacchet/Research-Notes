@@ -28,5 +28,19 @@ When an application calls a function in   subsystem DLL one of the following wil
 Subsystems are started by the session manager (*smss.exe*) process.Subsystem startup information is stored udner the registry key *HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SessionManager\SubSystems*.
 
 #### Windows Subsystem
+In an attempt to reduce redunancy and overhead, Windows implements key parts of its operating systems into the Windows subsystem. This subsystem is responsible for critical functionality for the Windows device, to include handling things like display I/O on behalf of processes. This is to include scenarios where a Windows server is running with no interactive users logged on. Because of its role, this process is marked as critical and if for any reason it is stopped the device crashes. The Windows subsystem consists of the following components:
+
+- For each session, an instance of the environment subsystem process (Csrss.exe) loads four DLLs (Baserv.dll, Winsrv.dll, Sxssrv.dll, and Csrsrv.dll) that contain support for:
+  - Housekeeping tasks related to creating processes and threads 
+  - Shutting down Windows applications
+  - Containing the .ini (initialization file) to registry location mappings for backwards compatibility
+  - Sending certain kernel notification messages to Windows applications as Window messages
+  - Portions of the support for 16-bit virtual DOS machine processes
+  - Side-by-side (SxS)/Fusino and manifest cache support
+  - Several natural language support functions 
+- A kernel-mode device driver (Win32k.sys) that contains the following:
+
+
+*Important note: The kernel mode code that handles the raw input thread and desktop thread (responsible for the mouse cursor, keyboard input, and handling the desktop window) is hosted inside threads running inside Winsrc.dll. The Csess.exe instances associated with interactive user sessions contain a fifth D:: called the Canonical Display Driver (Cdd.dll). This driver is responsible for communicating with the DirectX support in the kernel on each vertical refresh (VSync) to draw the visible desktop without traditional hardware-accelerated GDI support.*
 
 #### Windows 10 & Win32k.sys
