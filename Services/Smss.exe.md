@@ -1,0 +1,2 @@
+# Session Manager
+The session manager process is technically the first user-mode process started in Windows (started by the kernel). Its only dependency is Ntdll.dll, since the Windows subsystem process (csrss.exe) has not yet been started.
