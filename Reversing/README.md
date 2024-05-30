@@ -1,0 +1,1 @@
+This directory serves to demonstrate things I've learned while reversing Windows things that interest me. 
