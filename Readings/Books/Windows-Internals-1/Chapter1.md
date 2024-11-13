@@ -41,3 +41,12 @@
 #### Virtual Address Descriptors (VADs)
  - Structures the memory managers uses to keep track of the virtual addresses the process is using
 ### Jobs
+ - Main function is to allow the management and manipulation of groups of processes as a unit
+   - Allows control of certain attributes and provides limits for the process or processes associated with the job.
+### Virtual Memory
+ - Windows provides flat/linear address space for processes (they think they have a lot more than they actually do)
+   - By controlling the protection and mapping, Windows can ensure that individual processes don't overwrite one another
+ - Since most machines have much less physical memory (RAM) than the memory in use by processes the memory manager pages that memory to disk
+   - This allows physical memory to be freed so that it can be used for other processes 
+     - If/when a thread accesses a virtual address that has been paged to disk, the virtual memory manager loads the information back into physical memory from disk
+     - Page default sizes are 4KB
